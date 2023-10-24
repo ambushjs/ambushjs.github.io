@@ -1,0 +1,71 @@
+.heroBanner {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonHeader {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonCopy {
+    display: flex;
+    padding: 0 1.5rem;
+    flex-direction: row;
+    gap: 0.5rem;
+    place-items: center;
+    border-radius: 0.25rem;
+    height: 2.75rem;
+    font-size: 1rem;
+    font-family: monospace;
+    font-weight: 600;
+    line-height: 1;
+    color: #1F2937;
+    text-decoration: none;
+    background-color: #e3e3e3;
+    cursor: copy;
+    user-select: none;
+    border-width: 0;
+}
+
+@media screen and (max-width: 996px) {
+    .heroBanner {
+        padding: 2rem !important;
+    }
+}
+
+@media screen and (max-width: 830px) and (min-width: 620px) {
+    .header {
+        font-size: 35px !important;
+    }
+
+    .subheader {
+        font-size: 55px !important;
+    }
+}
+
+@media screen and (max-width: 620px) and (min-width: 355px) {
+    .header {
+        font-size: 35px !important;
+    }
+
+    .subheader {
+        font-size: 45px !important;
+    }
+}
+
+@media screen and (max-width: 355px) {
+    .header {
+        font-size: 25px !important;
+    }
+
+    .subheader {
+        font-size: 35px !important;
+    }
+}

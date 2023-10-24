@@ -1,0 +1,35 @@
+{
+    "short_name": "Ambush",
+    "name": "Ambush Documentation",
+    "description": "Official documentation of Ambush.",
+    "icons": [
+        {
+            "src": "/img/ambush-192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any"
+        },
+        {
+            "src": "/img/ambush-512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any"
+        },
+        {
+            "src": "/img/maskable/ambush-192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/img/maskable/ambush-512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "maskable"
+        }
+    ],
+    "background_color": "#000000",
+    "theme_color": "#0053ab",
+    "display": "standalone",
+    "start_url": "/"
+}
