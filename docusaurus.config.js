@@ -7,6 +7,7 @@ const config = {
     tagline: 'Start using Ambush in your project!',
     favicon: 'img/favicon.ico',
     url: 'https://ambushjs.github.io',
+    trailingSlash: false,
     baseUrl: '/',
     organizationName: 'ambushjs',
     projectName: 'ambushjs.github.io',
