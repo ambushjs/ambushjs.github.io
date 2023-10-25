@@ -6,7 +6,7 @@ const config = {
     title: 'Ambush',
     tagline: 'Start using Ambush in your project!',
     favicon: 'img/favicon.ico',
-    url: 'https://ambushjs.github.io',
+    url: 'https://ambushjs.js.org',
     trailingSlash: false,
     baseUrl: '/',
     organizationName: 'ambushjs',
@@ -17,16 +17,6 @@ const config = {
         defaultLocale: 'en',
         locales: ['en'],
     },
-    themes: [
-        [
-            require.resolve('@easyops-cn/docusaurus-search-local'),
-            /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
-            ({
-                hashed: true,
-                language: ['en'],
-            }),
-        ],
-    ],
     plugins: [
         [
             '@docusaurus/plugin-pwa',
@@ -35,7 +25,7 @@ const config = {
                     {
                         tagName: 'link',
                         rel: 'icon',
-                        href: '/img/docusaurus.png',
+                        href: '/img/logo.svg',
                     },
                     {
                         tagName: 'link',
@@ -49,6 +39,13 @@ const config = {
                         content: '#25c2a0',
                     },
                 ],
+            },
+        ],
+        [
+            require('@docusaurus/remark-plugin-npm2yarn'),
+            {
+                sync: true,
+                converters: ['yarn', 'pnpm'],
             },
         ],
     ],
@@ -68,77 +65,93 @@ const config = {
             }),
         ],
     ],
-    themeConfig:
+    themeConfig: ({
         /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-        ({
-            image: 'img/social-card.svg',
-            navbar: {
-                title: 'Ambush',
-                logo: {
-                    alt: 'Ambush Logo',
-                    src: 'img/logo.svg',
+        algolia: {
+            appId: 'CMR81X324T',
+            apiKey: '903138f39c0e2b801feff5f3c3473b08',
+            indexName: 'ambush-js',
+            contextualSearch: true,
+            replaceSearchResultPathname: {
+                from: '/docs/',
+                to: '/',
+            },
+            searchPagePath: 'search',
+        },
+        image: 'img/social-card.svg',
+        navbar: {
+            title: 'Ambush',
+            logo: {
+                alt: 'Ambush Logo',
+                src: 'img/logo.svg',
+            },
+            items: [
+                {
+                    type: 'docSidebar',
+                    sidebarId: 'docs',
+                    position: 'left',
+                    label: 'Documentation',
                 },
-                items: [
-                    {
-                        type: 'docSidebar',
-                        sidebarId: 'documentationSidebar',
-                        position: 'left',
-                        label: 'Documentation',
-                    },
-                    {
-                        href: 'https://github.com/ambushjs/ambushjs.github.io',
-                        position: 'right',
-                        className: 'header-github-link',
-                        'aria-label': 'GitHub Repo',
-                    },
-                ],
-            },
-            footer: {
-                style: 'dark',
-                links: [
-                    {
-                        title: 'Docs',
-                        items: [
-                            {
-                                label: 'Tutorial',
-                                to: '/docs/intro',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'Links',
-                        items: [
-                            {
-                                label: 'GitHub',
-                                href: 'https://github.com/ambushjs',
-                            },
-                            {
-                                label: 'Package',
-                                href: 'https://npmjs.com/package/ambush',
-                            },
-                            {
-                                label: 'Docs',
-                                href: 'https://ambushjs.github.io',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'More',
-                        items: [
-                            {
-                                label: 'GitHub',
-                                href: 'https://github.com/facebook/docusaurus',
-                            },
-                        ],
-                    },
-                ],
-                copyright: `Copyright © ${new Date().getFullYear()} Ambush, Inc. Built with Docusaurus.`,
-            },
-            prism: {
-                theme: lightCodeTheme,
-                darkTheme: darkCodeTheme,
-            },
-        }),
+                {
+                    type: 'docSidebar',
+                    sidebarId: 'playground',
+                    position: 'left',
+                    label: 'Playground',
+                },
+                {
+                    href: 'https://github.com/ambushjs/ambushjs.github.io',
+                    position: 'right',
+                    className: 'header-github-link',
+                    'aria-label': 'GitHub Repo',
+                },
+            ],
+        },
+        footer: {
+            style: 'dark',
+            links: [
+                {
+                    title: 'Documentation',
+                    items: [
+                        {
+                            label: 'Getting started',
+                            to: '/docs/getting-started/intro',
+                        },
+                    ],
+                },
+                {
+                    title: 'Links',
+                    items: [
+                        {
+                            label: 'GitHub',
+                            href: 'https://github.com/ambushjs',
+                        },
+                        {
+                            label: 'Package',
+                            href: 'https://npmjs.com/package/ambush',
+                        },
+                        {
+                            label: 'Docs',
+                            href: 'https://ambush.js.org',
+                        },
+                    ],
+                },
+                {
+                    title: 'More',
+                    items: [
+                        {
+                            label: 'GitHub',
+                            href: 'https://github.com/facebook/docusaurus',
+                        },
+                    ],
+                },
+            ],
+            copyright: `Copyright © ${new Date().getFullYear()} Ambush, Inc. Built with Docusaurus.`,
+        },
+        prism: {
+            theme: lightCodeTheme,
+            darkTheme: darkCodeTheme,
+        },
+    }),
 };
 
 module.exports = config;

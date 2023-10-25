@@ -1,33 +1,66 @@
 ---
 sidebar_position: 1
+title: Introduction
+description: Introduction for getting started on using Ambush.
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Introduction
 
 Welcome to [Ambush][ambush], your go-to utility [npm][npm] package for simplifying complex tasks in [Node.js][node]. In comparison to alternatives such as [Lodash][lodash] and [Underscore.js][underscore], Ambush prioritizes performance and is tailored to enhance your development experience while keeping things lean and efficient.
 
-## Getting Started
+---
 
 Get started with Ambush by setting up the environment. You will need [Node.js][node] v14.0.0 or newer before installing with your preffered package manager.
 
+<Tabs>
+<TabItem value="npm" label="npm">
+
 ```bash
 npm install ambush
-yarn add ambush
-pnpm add ambush
-bun add ambush
 ```
+
+</TabItem>
+<TabItem value="yarn" label="yarn">
+
+```bash
+yarn add ambush
+```
+
+</TabItem>
+<TabItem value="pnpm" label="pnpm">
+
+```bash
+pnpm add ambush
+```
+
+</TabItem>
+</Tabs>
 
 ## Importing
 
 You can `import` or `require()` this package using a name of your preference, typically 'ab', or you can opt for object destructuring when working with a specific module:
 
-```js
-// CommonJS Modules
-const ab = require('ambush');
+<Tabs>
+<TabItem value="cjs" label="CommonJS">
 
-// ES Modules
+```js
+const ab = require('ambush');
+```
+
+</TabItem>
+<TabItem value="esm" label="ES Modules">
+
+```js
 import ab from 'ambush';
 ```
+
+</TabItem>
+</Tabs>
+
+---
 
 Ambush supports a diverse range of data types, including strings, arrays, and objects. Ensuring a good grasp of JavaScript fundamentals can be quite enjoyable and empowering for your coding journey. It lays a strong foundation for fun and creative programming adventures!
 

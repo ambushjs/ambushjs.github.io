@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
@@ -7,7 +6,7 @@ import styles from './index.module.css';
 
 function HomepageHeader() {
     return (
-        <header className={clsx('hero hero--primary', styles.heroBanner)}>
+        <header className={`hero hero--primary ${styles.heroBanner}`}>
             <div className="container">
                 <div className={styles.center}><h1 className={styles.header} style={{ fontSize: '50px' }}>Bring plenty of handy utilities to</h1></div>
                 <div className={styles.center}><h1 className={styles.subheader} style={{ fontSize: '65px', backgroundColor: '#ff7878', width: '6em' }}>your code</h1></div>
