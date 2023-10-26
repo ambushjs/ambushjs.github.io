@@ -15,7 +15,12 @@ const config = {
     onBrokenMarkdownLinks: 'throw',
     i18n: {
         defaultLocale: 'en',
-        locales: ['en'],
+        locales: ['en', 'ko'],
+        localeConfigs: {
+            en: {
+                htmlLang: 'en-US',
+            },
+        },
     },
     plugins: [
         [
@@ -74,6 +79,7 @@ const config = {
                 alt: 'Ambush Logo',
                 src: 'img/logo.svg',
             },
+            hideOnScroll: true,
             items: [
                 {
                     type: 'docSidebar',
@@ -86,6 +92,10 @@ const config = {
                     sidebarId: 'playground',
                     position: 'left',
                     label: 'Playground',
+                },
+                {
+                    type: 'localeDropdown',
+                    position: 'right',
                 },
                 {
                     href: 'https://github.com/ambushjs/ambushjs.github.io',
@@ -102,7 +112,7 @@ const config = {
                     title: 'Documentation',
                     items: [
                         {
-                            label: 'Getting started',
+                            label: 'Getting Started',
                             to: '/docs/getting-started/intro',
                         },
                     ],
@@ -134,6 +144,12 @@ const config = {
                     ],
                 },
             ],
+            logo: {
+                alt: 'Ambush Banner',
+                src: 'img/ambush.svg',
+                href: 'https://npmjs.com/package/ambush',
+                width: 400,
+            },
             copyright: `Copyright © ${new Date().getFullYear()} Ambush, Inc. Built with Docusaurus.`,
         },
         prism: {
