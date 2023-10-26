@@ -6,7 +6,7 @@ const config = {
     title: 'Ambush',
     tagline: 'Start using Ambush in your project!',
     favicon: 'img/favicon.ico',
-    url: 'https://ambushjs.js.org',
+    url: 'https://ambush.js.org',
     trailingSlash: false,
     baseUrl: '/',
     organizationName: 'ambushjs',
@@ -41,13 +41,6 @@ const config = {
                 ],
             },
         ],
-        [
-            require('@docusaurus/remark-plugin-npm2yarn'),
-            {
-                sync: true,
-                converters: ['yarn', 'pnpm'],
-            },
-        ],
     ],
     presets: [
         [
@@ -72,10 +65,6 @@ const config = {
             apiKey: '903138f39c0e2b801feff5f3c3473b08',
             indexName: 'ambush-js',
             contextualSearch: true,
-            replaceSearchResultPathname: {
-                from: '/docs/',
-                to: '/',
-            },
             searchPagePath: 'search',
         },
         image: 'img/social-card.svg',
