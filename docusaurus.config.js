@@ -15,7 +15,7 @@ const config = {
     onBrokenMarkdownLinks: 'throw',
     i18n: {
         defaultLocale: 'en',
-        locales: ['en', 'ko'],
+        locales: ['en'],
         localeConfigs: {
             en: {
                 htmlLang: 'en-US',
@@ -94,14 +94,9 @@ const config = {
                     label: 'Playground',
                 },
                 {
-                    type: 'localeDropdown',
-                    position: 'right',
-                },
-                {
                     href: 'https://github.com/ambushjs/ambushjs.github.io',
                     position: 'right',
                     className: 'header-github-link',
-                    'aria-label': 'GitHub Repo',
                 },
             ],
         },
@@ -113,7 +108,15 @@ const config = {
                     items: [
                         {
                             label: 'Getting Started',
-                            to: '/docs/getting-started/intro',
+                            to: '/docs/category/getting-started',
+                        },
+                        {
+                            label: 'Functions',
+                            to: '/docs/category/functions',
+                        },
+                        {
+                            label: 'Playground',
+                            to: '/docs/category/playground',
                         },
                     ],
                 },
@@ -135,12 +138,20 @@ const config = {
                     ],
                 },
                 {
-                    title: 'More',
+                    title: 'Statistics',
                     items: [
                         {
-                            label: 'GitHub',
-                            href: 'https://github.com/facebook/docusaurus',
+                            label: 'Socket',
+                            href: 'https://socket.dev/npm/package/ambush',
                         },
+                        {
+                            label: 'CodeQL',
+                            href: 'https://github.com/ambushjs/ambush/actions/workflows/codeql.yml',
+                        },
+                        {
+                            label: 'Size',
+                            href: 'https://bundlephobia.com/package/ambush@1.1.0',
+                        }
                     ],
                 },
             ],

@@ -1,16 +1,15 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Translate from '@docusaurus/Translate';
 import styles from './index.module.css';
 
 function HomepageHeader() {
     return (
         <header className={`hero hero--primary ${styles.heroBanner}`}>
             <div className="container">
-                <div className={styles.center}><h1 className={styles.header} style={{ fontSize: '50px' }}><Translate>Bring plenty of handy utilities to</Translate></h1></div>
-                <div className={styles.center}><h1 className={styles.subheader} style={{ fontSize: '65px', backgroundColor: '#ff7878', width: '6em' }}><Translate>your code</Translate></h1></div>
-                <div className={styles.center}><p style={{ fontSize: '16px', width: '45em' }}><Translate>Ambush is a minimal library that brings plenty of handy utilities to your code. Ambush prioritizes performance and is tailored to enhance your development experience while keeping things lean and efficient.</Translate></p></div>
+                <div className={styles.center}><h1 className={styles.header} style={{ fontSize: '50px' }}>Bring plenty of handy utilities to</h1></div>
+                <div className={styles.center}><h1 className={styles.subheader} style={{ fontSize: '65px', backgroundColor: '#ff7878', width: '6em' }}>your code</h1></div>
+                <div className={styles.center}><p style={{ fontSize: '16px', width: '45em' }}>Ambush is a minimal library that brings plenty of handy utilities to your code. Ambush prioritizes performance and is tailored to enhance your development experience while keeping things lean and efficient.</p></div>
 
                 <div className={styles.buttonHeader}>
                     <button className={styles.buttonCopy} onClick={() => navigator.clipboard.writeText('npm install ambush')}>
