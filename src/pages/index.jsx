@@ -1,19 +1,17 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import styles from './index.module.css';
 
 function HomepageHeader() {
     return (
-        <header className={`hero hero--primary ${styles.heroBanner}`}>
+        <header className="hero text-center text-[var(--docsearch-text-color)] relative overflow-hidden bg-[var(--docsearch-searchbox-background)] max-[996px]:p-8">
             <div className="container">
-                <div className={styles.center}><h1 className={styles.header} style={{ fontSize: '50px' }}>Bring plenty of handy utilities to</h1></div>
-                <div className={styles.center}><h1 className={styles.subheader} style={{ fontSize: '65px', backgroundColor: '#ff7878', width: '6em' }}>your code</h1></div>
-                <div className={styles.center}><p style={{ fontSize: '16px', width: '45em' }}>Ambush is a minimal library that brings plenty of handy utilities to your code. Ambush prioritizes performance and is tailored to enhance your development experience while keeping things lean and efficient.</p></div>
+                <div className="flex justify-center items-center"><h1 className="text-[50px] max-[830px]:text-[35px] max-[355px]:text-[25px]">Streamline with Ambush.</h1></div>
+                <div className="flex justify-center items-center mt-1.5"><p className="text-base w-[45em]">Ambush is a minimal library that brings plenty of handy utilities to your code. Ambush prioritizes performance and is tailored to enhance your development experience while keeping things lean and efficient.</p></div>
 
-                <div className={styles.buttonHeader}>
-                    <button className={styles.buttonCopy} onClick={() => navigator.clipboard.writeText('npm install ambush')}>
-                        <span style={{ color: '#ff2424' }}>&gt;</span>
+                <div className="flex justify-center items-center">
+                    <button className="mt-2.5 flex font-mono gap-2 place-items-center rounded h-11 text-base font-semibold text-gray-800 bg-[#ececec] cursor-copy leading-none select-none border px-6 hover:border-2" onClick={() => navigator.clipboard.writeText('npm install ambush')}>
+                        <span className="text-[#ff2424]">&gt;</span>
                         <span>npm install ambush</span>
 
                         <svg stroke="#000" fill="none" strokeWidth="2" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -23,9 +21,9 @@ function HomepageHeader() {
                     </button>
                 </div>
 
-                <div className={styles.center} style={{ flexWrap: 'wrap', marginTop: '25px' }}>
-                    <a href="https://github.com/ambushjs/ambush" style={{ marginRight: '0.125rem', marginBottom: '0.1rem' }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="115" height="28" role="img" aria-label="MADE IN: GITHUB">
+                <div className="flex justify-center items-center flex-wrap mt-[25px]">
+                    <a href="https://github.com/ambushjs/ambush" className="mr-0.5 mb-[0.1rem]">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="115" height="28" role="img">
                             <g shapeRendering="crispEdges">
                                 <rect width="93.75" height="28" fill="#555" />
                                 <rect x="79" width="34.25" height="28" fill="#2e2e2e" />
@@ -36,8 +34,8 @@ function HomepageHeader() {
                             </g>
                         </svg>
                     </a>
-                    <a href="https://github.com/ambushjs/ambush" style={{ marginLeft: '0.125rem', marginBottom: '0.1rem' }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="129.5" height="28" role="img" aria-label="MADE WITH: ❤">
+                    <a href="https://github.com/ambushjs/ambush" className="ml-0.5 mb-[0.1rem]">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="129.5" height="28" role="img">
                             <g shapeRendering="crispEdges">
                                 <rect width="95.25" height="28" fill="#555" />
                                 <rect x="95.25" width="34.25" height="28" fill="#e05d44" />
@@ -58,7 +56,7 @@ export default function Home() {
     return (
         <Layout title="Home" description="Official documentation of Ambush">
             <HomepageHeader />
-            <main>
+            <main className="transition-all duration-[var(--ifm-transition-slow)] ease-[var(--ifm-transition-timing-default)]">
                 <HomepageFeatures />
             </main>
         </Layout>

@@ -1,5 +1,5 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -23,6 +23,7 @@ const config = {
         },
     },
     plugins: [
+        'docusaurus-plugin-sass',
         [
             '@docusaurus/plugin-pwa',
             {
@@ -46,6 +47,16 @@ const config = {
                 ],
             },
         ],
+        async function tailwind() {
+            return {
+                name: "docusaurus-tailwindcss",
+                configurePostCss(postcssOptions) {
+                    postcssOptions.plugins.push(require("tailwindcss"));
+                    postcssOptions.plugins.push(require("autoprefixer"));
+                    return postcssOptions;
+                },
+            };
+        },
     ],
     presets: [
         [
@@ -82,10 +93,9 @@ const config = {
             hideOnScroll: true,
             items: [
                 {
-                    type: 'docSidebar',
-                    sidebarId: 'docs',
-                    position: 'left',
-                    label: 'Documentation',
+                    label: 'Docs',
+                    to: '/docs/category/getting-started',
+                    className: 'docs-navbar',
                 },
                 {
                     type: 'docSidebar',
@@ -101,7 +111,6 @@ const config = {
             ],
         },
         footer: {
-            style: 'dark',
             links: [
                 {
                     title: 'Documentation',
