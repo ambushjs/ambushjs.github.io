@@ -4,3 +4,86 @@ title: Installation
 description: Install Ambush in your enviroment.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Installation
+
+Before you begin using Ambush, you need to ensure that your system has Node.js and NPM installed.
+
+Ambush is built for Node.js, so you must have Node.js and npm (Node Package Manager) installed on your system. If you don't have them already, you can download and install Node.js from the official website.
+
+Don't worry, NPM will automatically added after installing Node.js.
+
+:::info
+
+This page only uses NPM for reference.
+
+:::
+
+To verify that you have Node.js and npm installed, open your terminal and run the following command:
+
+<Tabs>
+<TabItem value="npm" label="npm">
+
+```bash
+npm -v
+```
+
+</TabItem>
+<TabItem value="yarn" label="Yarn">
+
+```bash
+yarn -v
+```
+
+</TabItem>
+<TabItem value="pnpm" label="pnpm">
+
+```bash
+pnpm -v
+```
+
+</TabItem>
+</Tabs>
+
+These commands should display the installed Node.js and npm versions, respectively.
+
+## Text Editor
+
+You'll need a text editor or integrated development environment (IDE) to write and edit your code. Choose a text editor that suits your preferences, such as Visual Studio Code, Sublime Text, or any other.
+
+## Installation
+
+Now that you've met the prerequisites, you can proceed to install Ambush. If you don't already have a Node.js project, create a new directory for your project. You can do this in your terminal with the following commands:
+
+```bash
+mkdir my-project
+cd my-project
+```
+
+In your project directory, initialize a new Node.js project and initialize a `package.json` file using the following command:
+
+```bash npm2yarn
+npm init -y
+```
+
+This command will create a package.json file in your project directory. Now, you can use the `npm install` command to download and install the Ambush package:
+
+```bash npm2yarn
+npm install ambush
+```
+
+This command will download Ambush and its dependencies, adding them to your project's `node_modules` directory.
+
+### Verify Installation
+
+You can verify that Ambush was installed successfully by checking your package.json file. It should now include Ambush as a dependency.
+
+```json
+"dependencies": {
+  "ambush": "^x.x.x"  // The installed version of Ambush
+}
+```
+
+Now that you've completed the initial setup, you're ready to [integrate Ambush into your project](/docs/getting-started/usage) and unleash its powerful capabilities.

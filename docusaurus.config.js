@@ -65,8 +65,19 @@ const config = {
             ({
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
-                    editUrl:
-                        'https://github.com/ambushjs/ambushjs.github.io/tree/main',
+                    editUrl: 'https://github.com/ambushjs/ambushjs.github.io/tree/main',
+                    remarkPlugins: [
+                        [
+                            require('@docusaurus/remark-plugin-npm2yarn'),
+                            {
+                                sync: true,
+                                converters: [
+                                    'yarn',
+                                    'pnpm',
+                                ],
+                            },
+                        ],
+                    ],
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),

@@ -1,0 +1,39 @@
+---
+sidebar_position: 3
+title: Usage
+description: Import & start using Ambush to your project.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Usage
+
+If you haven't already installed Ambush, please follow the steps in the [installation](/docs/getting-started/install) section of the previous documentation. Now that Ambush is installed, you can import it into your project. Start by including this at the top of your file:
+
+:::info
+
+`CJS` signifies that your project adheres to the CommonJS module system, while `ESM` designates it as an ECMAScript module. When you create a new project with `npm init`, the default module system will be CommonJS.
+
+:::
+
+<Tabs>
+<TabItem value="cjs" label="CJS">
+
+```js
+const ab = require('ambush');
+```
+
+</TabItem>
+<TabItem value="esm" label="ESM">
+
+```js
+import ab from 'ambush';
+```
+
+</TabItem>
+</Tabs>
+
+Ambush provides a wide array of basic functionalities that can significantly enhance your projects. It includes utilities that simplify common tasks and boost your development process. To get a comprehensive overview of all the available utilities in Ambush, refer to our [functions](/docs/category/functions) documentation.
+
+If you have any questions or encounter any issues while using Ambush, don't hesitate to explore our extensive documentation or reach out to our support team for assistance. We're here to help you make the most of Ambush and ensure your project's success.
