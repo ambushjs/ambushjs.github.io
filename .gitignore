@@ -3,6 +3,7 @@
 /package-lock.json
 /build/
 
+/.idea/
 /.docusaurus/
 /.cache-loader/
 
