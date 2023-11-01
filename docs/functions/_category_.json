@@ -3,6 +3,6 @@
     "position": 2,
     "link": {
         "type": "generated-index",
-        "description": "All of the functions available in Ambush."
+        "description": "Utility functions available in Ambush."
     }
 }

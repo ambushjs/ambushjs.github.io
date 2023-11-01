@@ -1,8 +1,0 @@
-{
-    "label": "Multi-type",
-    "position": 1,
-    "link": {
-        "type": "generated-index",
-        "description": "Multi-type functions are utilities that support multiple JavaScript data types."
-    }
-}

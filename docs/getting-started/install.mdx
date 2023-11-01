@@ -6,6 +6,7 @@ description: Install Ambush in your enviroment.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
 
 # Installation
 
@@ -13,15 +14,7 @@ Before you begin using Ambush, you need to ensure that your system has Node.js a
 
 Ambush is built for Node.js, so you must have Node.js and npm (Node Package Manager) installed on your system. If you don't have them already, you can download and install Node.js from the official website.
 
-Don't worry, NPM will automatically added after installing Node.js.
-
-:::info
-
-This page only uses NPM for reference.
-
-:::
-
-To verify that you have Node.js and npm installed, open your terminal and run the following command:
+Don't worry, NPM will automatically added after installing Node.js. To verify that you have Node.js and npm installed, open your terminal and run the following command:
 
 <Tabs>
 <TabItem value="npm" label="npm">
@@ -80,7 +73,7 @@ This command will download Ambush and its dependencies, adding them to your proj
 
 You can verify that Ambush was installed successfully by checking your package.json file. It should now include Ambush as a dependency.
 
-```json
+```json title="package.json"
 "dependencies": {
   "ambush": "^x.x.x"  // The installed version of Ambush
 }

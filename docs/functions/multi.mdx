@@ -1,0 +1,104 @@
+---
+sidebar_position: 1
+title: Multi-type
+description: Explore available multi-type functions.
+---
+
+# Multi-type
+
+Explore available multi-type functions.
+
+## chunk
+
+Chunk an array or an object into small groups.
+
+```js
+const arr1 = [1, 2, 3, 4, 5];
+const obj1 = { a: 1, b: 2, c: 3 };
+
+ab.chunk(arr1, 3); // [[1, 2, 3], [4, 5]]
+ab.chunk(obj1, 2); // [{ a: 1, b: 2 }, { c: 3 }]
+```
+
+```ts
+export function chunk<T>(data: T, size: number): T;
+```
+
+| Parameter | Type                | Description                        |
+|-----------|---------------------|------------------------------------|
+| data      | `array` \| `object` | The data to chunk accordingly.     |
+| size      | `number`            | The size chunked arrays will be.   |
+
+---
+
+## deduplicate
+
+Remove duplicated elements in an array or an object.
+
+```js
+const arr1 = [1, 1, 5, 4, 4, 9, 8, 9];
+const obj1 = { a: 1, b: 2, a: 4, b: 2 };
+
+ab.deduplicate(arr1); // [1, 5, 4, 9, 8]
+ab.deduplicate(obj1); // { b: 2, a: 4 }
+```
+
+```ts
+export function deduplicate<T>(data: T): T;
+```
+
+| Parameter | Type                | Description                        |
+|-----------|---------------------|------------------------------------|
+| data      | `array` \| `object` | The data to remove duplicates.     |
+
+---
+
+## difference
+
+Find the symmetric difference between an array, object or a string.
+
+```js
+ab.difference([1, 2, 3], [2, 3, 4]); // [1, 4]
+ab.difference({ a: 1, b: 2, c: 3 }, { b: 2, c: 3, d: 4 }); // { a: 1, d: 4 }
+ab.difference("abc", "bcd"); // ['a', 'd']
+```
+
+```ts
+export function difference<T, P>(a: T, b: P): T & P;
+```
+
+| Parameter | Type                             | Description                       |
+|-----------|----------------------------------|-----------------------------------|
+| a         | `array` \| `object` \| `string` | First data to compare.             |
+| b         | `array` \| `object` \| `string` | Second data to compare.            |
+
+---
+
+## flatten
+
+Unnest a nested array or object into a single-level structure.
+
+```js
+const arr1 = [1, [2, 3, 4], 5];
+const obj1 = { a: 1, b: { c: 3, d: 4 } };
+
+// [1, 2, 3, 4, 5]
+ab.flatten(arr1);
+
+// { a: 1, 'b-c': 3, 'b-d': 4 }
+ab.flatten(obj1, '-');
+```
+
+```ts
+export function flatten<T>(data: T, joiner?: string): T;
+```
+
+:::info
+Parameter `joiner` defaults to a period (a dot).
+:::
+
+| Parameter | Type                | Description                                                |
+|-----------|---------------------|------------------------------------------------------------|
+| data      | `array` \| `object` | The data to flatten.                                       |
+| joiner?   | `string`            | String to join two object names when flattening an object. |
+
