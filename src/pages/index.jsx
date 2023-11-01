@@ -1,9 +1,9 @@
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import HomepageFeatures from '@site/src/components/Features';
 
 function HomepageHeader() {
     return (
-        <header className="hero text-center text-[var(--docsearch-text-color)] relative overflow-hidden bg-[var(--docsearch-searchbox-background)] max-[996px]:p-8">
+        <header className="hero text-center text-[var(--docsearch-text-color)] relative overflow-hidden bg-[var(--ifm-toc-border-color)] max-[996px]:p-8">
             <div className="container">
                 <div className="flex justify-center items-center"><h1 className="text-[50px] max-[830px]:text-[35px] max-[355px]:text-[25px]">Streamline with Ambush.</h1></div>
                 <div className="flex justify-center items-center mt-1.5"><p className="text-base w-[45em]">Ambush is a minimal library that brings plenty of handy utilities to your code. Ambush prioritizes performance and is tailored to enhance your development experience while keeping things lean and efficient.</p></div>
