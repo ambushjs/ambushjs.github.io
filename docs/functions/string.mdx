@@ -7,3 +7,168 @@ description: Explore available string functions.
 # String
 
 Explore available string functions.
+
+:::info
+All case function and HTML string function types are:
+
+```ts
+export function <name>(input: string): string;
+```
+
+| Parameter      | Type      | Description                |
+|----------------|-----------|----------------------------|
+| input          | `string`  | The input to convert.      |
+
+:::
+
+## altCase
+
+Convert a string to aLtErNaTiNgCaSe.
+
+:::info
+`altCase()` always starts with a lowercase letter.
+:::
+
+```js
+ab.altCase('Hello.'); // 'hElLo.'
+```
+
+---
+
+## camelCase
+
+Convert a string to camelCase.
+
+```js
+ab.camelCase('Hello World'); // 'helloWorld'
+```
+
+---
+
+## kebabCase
+
+Convert a string to kebab-case.
+
+```js
+ab.kebabCase('Hello World'); // 'hello-world'
+```
+
+---
+
+## lowerCase
+
+Convert a string to lowercase.
+
+:::warning
+The usage of `String.prototype.lowerCase()` is recommended. 
+:::
+
+```js
+ab.lowerCase('HeLLo.') // 'hello.'
+```
+
+---
+
+## pascalCase
+
+Convert a string to PascalCase.
+
+```js
+ab.pascalCase('Hello World'); // 'HelloWorld'
+```
+
+---
+
+## sentenceCase
+
+Convert a string to sentence case.
+
+```js
+ab.sentenceCase('hello-world'); // 'Hello world'
+```
+
+---
+
+## snakeCase
+
+Convert a string to snake_case.
+
+```js
+ab.snakeCase('hello-world'); // 'hello_world'
+```
+
+---
+
+## startCase
+
+Convert a string to Start Case.
+
+```js
+ab.startCase('hello world'); // 'Hello World'
+```
+
+---
+
+## switchCase
+
+Switch cases in a string (lowercase to uppercase, vice versa).
+
+```js
+ab.switchCase('Hello, World!'); // 'hELLO, wORLD!'
+```
+
+---
+
+## titleCase
+
+Convert a string to Title Case.
+
+```js
+ab.titleCase('fOO thE BaR.'); // 'Foo the Bar.'
+```
+
+---
+
+## uppercase
+
+Convert a string to UPPERCASE.
+
+:::warning
+The usage of `String.prototype.upperCase()` is recommended. 
+:::
+
+```js
+ab.upperCase('hello world'); // 'HELLO WORLD'
+```
+
+---
+
+## escapeHtml
+
+Escape special HTML characters in a string.
+
+```js
+ab.escapeHtml('<div>Hello, World!</div>'); // '&lt;div&gt;Hello, World!&lt;/div&gt;'
+```
+
+---
+
+## unescapeHtml
+
+Unescape escaped HTML characters in a string.
+
+```js
+ab.unescapeHtml('&lt;div&gt;Hello, World!&lt;/div&gt;'); // '<div>Hello, World!</div>'
+```
+
+## occurences
+
+Count the number of occurrences of a substring in a string.
+
+```js
+ab.occurences('Jerry the berry.', 'e'); // 3
+```
+
+```ts
+export function occurrences(input: string, substring: string): number;
+```
