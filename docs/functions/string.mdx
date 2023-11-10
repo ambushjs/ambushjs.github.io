@@ -1,15 +1,15 @@
 ---
-sidebar_position: 2
+sidebar_position: 5
 title: String
-description: Explore available string functions.
+description: Explore available string utilities.
 ---
 
 # String
 
-Explore available string functions.
+Explore available string utilities.
 
 :::info
-All case function and HTML string function types are:
+The default string functions without types are:
 
 ```ts
 export function <name>(input: string): string;
@@ -30,7 +30,8 @@ Convert a string to aLtErNaTiNgCaSe.
 :::
 
 ```js
-ab.altCase('Hello.'); // 'hElLo.'
+ab.altCase('Hello.');
+// => 'hElLo.'
 ```
 
 ---
@@ -40,7 +41,8 @@ ab.altCase('Hello.'); // 'hElLo.'
 Convert a string to camelCase.
 
 ```js
-ab.camelCase('Hello World'); // 'helloWorld'
+ab.camelCase('Hello World');
+// => 'helloWorld'
 ```
 
 ---
@@ -50,7 +52,8 @@ ab.camelCase('Hello World'); // 'helloWorld'
 Convert a string to kebab-case.
 
 ```js
-ab.kebabCase('Hello World'); // 'hello-world'
+ab.kebabCase('Hello World');
+// => 'hello-world'
 ```
 
 ---
@@ -64,7 +67,8 @@ The usage of `String.prototype.lowerCase()` is recommended.
 :::
 
 ```js
-ab.lowerCase('HeLLo.') // 'hello.'
+ab.lowerCase('HeLLo.')
+// => 'hello.'
 ```
 
 ---
@@ -74,7 +78,8 @@ ab.lowerCase('HeLLo.') // 'hello.'
 Convert a string to PascalCase.
 
 ```js
-ab.pascalCase('Hello World'); // 'HelloWorld'
+ab.pascalCase('Hello World');
+// => 'HelloWorld'
 ```
 
 ---
@@ -84,7 +89,8 @@ ab.pascalCase('Hello World'); // 'HelloWorld'
 Convert a string to sentence case.
 
 ```js
-ab.sentenceCase('hello-world'); // 'Hello world'
+ab.sentenceCase('hello-world');
+// => 'Hello world'
 ```
 
 ---
@@ -94,7 +100,8 @@ ab.sentenceCase('hello-world'); // 'Hello world'
 Convert a string to snake_case.
 
 ```js
-ab.snakeCase('hello-world'); // 'hello_world'
+ab.snakeCase('hello-world');
+// => 'hello_world'
 ```
 
 ---
@@ -104,7 +111,8 @@ ab.snakeCase('hello-world'); // 'hello_world'
 Convert a string to Start Case.
 
 ```js
-ab.startCase('hello world'); // 'Hello World'
+ab.startCase('hello world');
+// => 'Hello World'
 ```
 
 ---
@@ -114,7 +122,8 @@ ab.startCase('hello world'); // 'Hello World'
 Switch cases in a string (lowercase to uppercase, vice versa).
 
 ```js
-ab.switchCase('Hello, World!'); // 'hELLO, wORLD!'
+ab.switchCase('Hello, World!');
+// => 'hELLO, wORLD!'
 ```
 
 ---
@@ -124,7 +133,8 @@ ab.switchCase('Hello, World!'); // 'hELLO, wORLD!'
 Convert a string to Title Case.
 
 ```js
-ab.titleCase('fOO thE BaR.'); // 'Foo the Bar.'
+ab.titleCase('fOO thE BaR.');
+// => 'Foo the Bar.'
 ```
 
 ---
@@ -138,7 +148,8 @@ The usage of `String.prototype.upperCase()` is recommended.
 :::
 
 ```js
-ab.upperCase('hello world'); // 'HELLO WORLD'
+ab.upperCase('hello world');
+// => 'HELLO WORLD'
 ```
 
 ---
@@ -148,7 +159,8 @@ ab.upperCase('hello world'); // 'HELLO WORLD'
 Escape special HTML characters in a string.
 
 ```js
-ab.escapeHtml('<div>Hello, World!</div>'); // '&lt;div&gt;Hello, World!&lt;/div&gt;'
+ab.escapeHtml('<div>Hello, World!</div>');
+// => '&lt;div&gt;Hello, World!&lt;/div&gt;'
 ```
 
 ---
@@ -158,7 +170,8 @@ ab.escapeHtml('<div>Hello, World!</div>'); // '&lt;div&gt;Hello, World!&lt;/div&
 Unescape escaped HTML characters in a string.
 
 ```js
-ab.unescapeHtml('&lt;div&gt;Hello, World!&lt;/div&gt;'); // '<div>Hello, World!</div>'
+ab.unescapeHtml('&lt;div&gt;Hello, World!&lt;/div&gt;');
+// => '<div>Hello, World!</div>'
 ```
 
 ## occurences
@@ -166,9 +179,59 @@ ab.unescapeHtml('&lt;div&gt;Hello, World!&lt;/div&gt;'); // '<div>Hello, World!<
 Count the number of occurrences of a substring in a string.
 
 ```js
-ab.occurences('Jerry the berry.', 'e'); // 3
+ab.occurences('Jerry the berry.', 'e');
+// => 3
 ```
 
 ```ts
 export function occurrences(input: string, substring: string): number;
 ```
+
+| Parameter      | Type      | Description                             |
+|----------------|-----------|-----------------------------------------|
+| input          | `string`  | The input to check for substrings.      |
+| substring      | `string`  | The subtring to check in `input`        |
+
+---
+
+## palindrome
+
+Check if a string is palindrome.
+
+```js
+ab.palindrome('hello')
+// => false
+ab.palindrome('radar')
+// => true
+```
+
+```ts
+export function palindrome(input: string): boolean;
+```
+
+---
+
+## truncate
+
+Truncate a string.
+
+```js
+ab.truncate('Hello, World!', { length: 5, ending: '...more' });
+// => 'Hello...more'
+ab.truncate('Hello, World!');
+// => 'Hello, Wor...'
+```
+
+:::info
+Parameter `{length}` defaults to `10` and parameter `{ending}` defaults to `'...'`.
+:::
+
+```ts
+export function truncate(input: string, { length, ending }: Options): string;
+```
+
+| Parameter      | Type      | Description                             |
+|----------------|-----------|-----------------------------------------|
+| input          | `string`  | The input to truncate.                  |
+| \{length\}     | `number`  | The length when to truncate.            |
+| \{ending\}     | `string`  | The ending instead of an ellipsis.      |

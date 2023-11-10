@@ -1,0 +1,47 @@
+---
+sidebar_position: 2
+title: Math
+description: Explore available math utilities.
+---
+
+# Math
+
+Explore available math utilities.
+
+## factorial
+
+Find the factorial of a number.
+
+```js
+ab.factorial(5);
+// => 120
+ab.factorial(10);
+// => 3628800
+```
+
+```ts
+export function factorial(n: number): number;
+```
+
+| Parameter | Type                | Description                                                |
+|-----------|---------------------|------------------------------------------------------------|
+| n         | `number`            | The number to caclulate the factorial.                     |
+
+---
+
+## fibonacci
+
+Find the nth, or generate an array of the Fibonacci sequence.
+
+```js
+ab.fibonacci(2);
+// => 1
+ab.fibonacci(2, true);
+// => [0, 1, 1]
+```
+
+```ts
+export function fibonacci(n: number, array: boolean): number | number[];
+```
+
+

@@ -4,7 +4,7 @@ const { themes } = require('prism-react-renderer');
 const config = {
     title: 'Ambush',
     tagline: 'Start using Ambush in your project!',
-    favicon: 'img/favicon.ico',
+    favicon: 'img/favicon.svg',
     url: 'https://ambush.js.org',
     trailingSlash: false,
     baseUrl: '/',

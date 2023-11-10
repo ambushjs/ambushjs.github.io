@@ -1,0 +1,51 @@
+---
+sidebar_position: 1
+title: Date
+description: Explore available date utilities.
+---
+
+# Date
+
+Explore available date utilities.
+
+## daysAgo
+
+Find exact information of the date of the number of days ago.
+
+```js
+ab.daysAgo(3);
+// Try it yourself!
+```
+
+```ts
+export function daysAgo(days: number): DayInfo;
+```
+
+| Parameter      | Type      | Description                             |
+|----------------|-----------|-----------------------------------------|
+| days           | `number`  | The number of days before to check.     |
+
+---
+
+## leapYear
+
+Check if a year is a leap year.
+
+```js
+ab.leapYear(2020);
+// => true
+ab.leapYear(1900);
+// => false
+```
+
+:::info
+Parameter `year` defaults to the current year.
+:::
+
+```ts
+export declare function leapYear(year?: number): boolean;
+```
+
+| Parameter      | Type      | Description                             |
+|----------------|-----------|-----------------------------------------|
+| year?           | `number`  | The year to check.     |
