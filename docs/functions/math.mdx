@@ -44,4 +44,129 @@ ab.fibonacci(2, true);
 export function fibonacci(n: number, array: boolean): number | number[];
 ```
 
+| Parameter | Type                | Description                                                |
+|-----------|---------------------|------------------------------------------------------------|
+| n         | `number`            | The number to caclulate the factorial.                     |
+| array     | `boolean`           | Determines wether to generate an array.                    |
 
+---
+
+## isEven
+
+Check if a number is an even number.
+
+```js
+ab.isEven(3);
+// => false
+ab.isEven(2);
+// => true
+```
+
+```ts
+export function isEven(n: number): boolean;
+```
+
+| Parameter | Type                | Description                                |
+|-----------|---------------------|--------------------------------------------|
+| n         | `number`            | The number to check if it is even.         |
+
+---
+
+## isPrime
+
+Check if a number is a prime number.
+
+```js
+ab.isPrime(3);
+// => true
+ab.isPrime(10);
+// => false
+```
+
+```ts
+export function isPrime(n: number): boolean;
+```
+
+| Parameter | Type                | Description                                      |
+|-----------|---------------------|--------------------------------------------------|
+| n         | `number`            | The number to check if it is a prime number.     |
+
+---
+
+## mean
+
+Find the mean (average) in an array with numbers.
+
+```js
+ab.mean([1, 7, 4, 3]);
+// => 3.75
+ab.mean([1, 23, 3]);
+// => 9
+```
+
+```ts
+export function mean(numbers: number[]): number;
+```
+
+| Parameter | Type                | Description                                      |
+|-----------|---------------------|--------------------------------------------------|
+| numbers   | `number[]`          | Array of numbers to calculate the mean.          |
+
+---
+
+## median
+
+Find the median (middle) in an array with numbers.
+
+```js
+ab.median([1, 2, 3]);
+// => 2
+ab.median([7, 3, 9]);
+// => 7
+```
+
+```ts
+export function median(numbers: number[]): number;
+```
+
+| Parameter | Type                | Description                                      |
+|-----------|---------------------|--------------------------------------------------|
+| numbers   | `number[]`          | Array of numbers to calculate the median.        |
+
+---
+
+## mode
+
+Find the mode (common) in an array with numbers.
+
+```js
+ab.mode([1, 2, 3]);
+// => [1, 2, 3]
+ab.mode([7, 3, 3, 9]);
+// => 3
+```
+
+```ts
+export function mode(numbers: number[]): number;
+```
+
+| Parameter | Type                | Description                                      |
+|-----------|---------------------|--------------------------------------------------|
+| numbers   | `number[]`          | Array of numbers to calculate the mode.          |
+
+---
+
+## pascal
+
+Generate an array of the Pascal's triangle with the specified length.
+
+```js
+ab.pascal(3);
+// => [ [ 1 ], [ 1, 1 ], [ 1, 2, 1 ] ]
+ab.pascal(1);
+// => [ [ 1 ] ]
+```
+
+```ts
+export function pascal(n: number): number[][];
+```
