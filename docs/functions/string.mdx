@@ -12,12 +12,14 @@ Explore available string utilities.
 The default string functions without types are:
 
 ```ts
+/**
+ * Convert a string to <case>.
+ * 
+ * @param input - The input string to convert.
+ * @returns The converted string.
+ */
 export function <name>(input: string): string;
 ```
-
-| Parameter      | Type      | Description                |
-|----------------|-----------|----------------------------|
-| input          | `string`  | The input to convert.      |
 
 :::
 
@@ -181,22 +183,26 @@ Count the number of occurrences of a substring in a string.
 ```js
 ab.occurences('Jerry the berry.', 'e');
 // => 3
+ab.occurences('Hello World!', 'Hello');
+// => 1
 ```
 
 ```ts
+/**
+ * Count the number of occurrences of a substring in a string.
+ * 
+ * @param input - The input string to count.
+ * @param substring - The substring to check in the input.
+ * @returns How many times the substring was detected in the input.
+ */
 export function occurrences(input: string, substring: string): number;
 ```
-
-| Parameter      | Type      | Description                             |
-|----------------|-----------|-----------------------------------------|
-| input          | `string`  | The input to check for substrings.      |
-| substring      | `string`  | The subtring to check in `input`        |
 
 ---
 
 ## palindrome
 
-Check if a string is palindrome.
+Check if a string is a palindrome.
 
 ```js
 ab.palindrome('hello')
@@ -206,6 +212,12 @@ ab.palindrome('radar')
 ```
 
 ```ts
+/**
+ * Check if a string is a palindrome.
+ * 
+ * @param input - The input string to check.
+ * @returns If the input is a palindrome.
+ */
 export function palindrome(input: string): boolean;
 ```
 
@@ -215,6 +227,10 @@ export function palindrome(input: string): boolean;
 
 Truncate a string.
 
+:::info
+Parameter `{length}` defaults to `10` and parameter `{ending}` defaults to `'...'`.
+:::
+
 ```js
 ab.truncate('Hello, World!', { length: 5, ending: '...more' });
 // => 'Hello...more'
@@ -222,16 +238,12 @@ ab.truncate('Hello, World!');
 // => 'Hello, Wor...'
 ```
 
-:::info
-Parameter `{length}` defaults to `10` and parameter `{ending}` defaults to `'...'`.
-:::
-
 ```ts
-export function truncate(input: string, { length, ending }: Options): string;
+/**
+ * Truncate a string.
+ * 
+ * @param input - The input string to truncate.
+ * @param options - Additional options for the truncate length and ending.
+ */
+export function truncate(input: string, { length, ending }?: Options): string;
 ```
-
-| Parameter      | Type      | Description                             |
-|----------------|-----------|-----------------------------------------|
-| input          | `string`  | The input to truncate.                  |
-| \{length\}     | `number`  | The length when to truncate.            |
-| \{ending\}     | `string`  | The ending instead of an ellipsis.      |

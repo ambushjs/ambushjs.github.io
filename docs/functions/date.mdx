@@ -18,18 +18,31 @@ ab.daysAgo(3);
 ```
 
 ```ts
+interface DayInfo {
+    day: string;
+    year: number;
+    week: number;
+    date: string;
+}
+
+/**
+ * Find exact information of the date of the number of days ago.
+ * 
+ * @param days - The number of days before to check.
+ * @returns Information of the number of days ago.
+ */
 export function daysAgo(days: number): DayInfo;
 ```
-
-| Parameter      | Type      | Description                             |
-|----------------|-----------|-----------------------------------------|
-| days           | `number`  | The number of days before to check.     |
 
 ---
 
 ## leapYear
 
 Check if a year is a leap year.
+
+:::info
+Parameter `year` defaults to the current year.
+:::
 
 ```js
 ab.leapYear(2020);
@@ -38,14 +51,12 @@ ab.leapYear(1900);
 // => false
 ```
 
-:::info
-Parameter `year` defaults to the current year.
-:::
-
 ```ts
-export declare function leapYear(year?: number): boolean;
+/**
+ * Check if a year is a leap year.
+ * 
+ * @param year - The year to check (defaults to the current year).
+ * @returns If the year is a leap year.
+ */
+export function leapYear(year?: number): boolean;
 ```
-
-| Parameter      | Type      | Description                             |
-|----------------|-----------|-----------------------------------------|
-| year?           | `number`  | The year to check.     |

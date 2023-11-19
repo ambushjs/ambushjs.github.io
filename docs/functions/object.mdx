@@ -22,35 +22,8 @@ console.log(`${ab.colors.red}Hello!${ab.colors.reset}`);
 ```
 
 ```ts
-export const colors: {
-    reset: string;
-    bright: string;
-    dim: string;
-    italic: string;
-    underline: string;
-    slowBlink: string;
-    fastBlink: string;
-    reverse: string;
-    hidden: string;
-    black: string;
-    red: string;
-    green: string;
-    yellow: string;
-    blue: string;
-    magenta: string;
-    cyan: string;
-    white: string;
-    gray: string;
-    crismon: string;
-    bgBlack: string;
-    bgRed: string;
-    bgGreen: string;
-    bgYellow: string;
-    bgBlue: string;
-    bgMagenta: string;
-    bgCyan: string;
-    bgWhite: string;
-    bgGray: string;
-    bgCrimson: string;
-};
+/**
+ * An object with ANSI escape codes to decorate your console.
+ */
+export const colors: Colors;
 ```

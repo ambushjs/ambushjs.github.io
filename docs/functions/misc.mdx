@@ -1,0 +1,283 @@
+---
+sidebar_position: 3
+title: Misc
+description: Explore available miscellaneous utilities.
+---
+
+# Miscellaneous
+
+Explore available miscellaneous utilities.
+
+:::info
+Some miscellaneous type declarations are overloaded since they support multiple data types.
+:::
+
+## chunk
+
+Chunk an array or an object into small groups.
+
+```js
+const arr1 = [1, 2, 3, 4, 5];
+const obj1 = { a: 1, b: 2, c: 3 };
+
+ab.chunk(arr1, 3);
+// => [[1, 2, 3], [4, 5]]
+ab.chunk(obj1, 2);
+// => [{ a: 1, b: 2 }, { c: 3 }]
+```
+
+```ts
+/**
+ * Chunk an array or an object into small groups.
+ * 
+ * @param data - The input array or object to chunk.
+ * @param size - The size of each chunk.
+ * @returns An array with the chunked data inside.
+ */
+export function chunk<T>(data: T[], size: number): T[];
+export function chunk<T>(data: Obj<T>, size: number): Obj<T>[];
+```
+
+---
+
+## deduplicate
+
+Remove duplicated elements in an array or an object.
+
+```js
+const arr1 = [1, 1, 5, 4, 4, 9, 8, 9];
+const obj1 = { a: 1, b: 2, a: 4, b: 2 };
+
+ab.deduplicate('aabbcc');
+// => ['a', 'b', 'c']
+ab.deduplicate(arr1);
+// => [1, 5, 4, 9, 8]
+ab.deduplicate(obj1);
+// => { b: 2, a: 4 }
+```
+
+```ts
+/**
+ * Remove duplicated elements in an array or an object.
+ * 
+ * @param data - The input string, array or object to deduplicate.
+ * @returns An array or an object with the deduplicated data inside.
+ */
+export function deduplicate(data: string): string[];
+export function deduplicate<T>(data: T[]): T[];
+export function deduplicate<T>(data: Obj<T>): Obj<T>;
+```
+
+---
+
+## difference
+
+Find the symmetric difference between a string, an array or an object.
+
+```js
+ab.difference([1, 2, 3], [2, 3, 4]);
+// => [1, 4]
+ab.difference({ a: 1, b: 2, c: 3 }, { b: 2, c: 3, d: 4 });
+// => { a: 1, d: 4 }
+ab.difference('abc', 'bcd');
+// => ['a', 'd']
+```
+
+```ts
+/**
+ * Find the symmetric difference between a string, an array or an object.
+ * 
+ * @param a - The first data to compare.
+ * @param b - The second data to compare.
+ * @returns An array with the different elements inside.
+ */
+export function difference(a: string, b: string): string[];
+export function difference<T>(a: T[], b: T[]): T[];
+export function difference<T>(a: Obj<T>, b: Obj<T>): Obj<T>[];
+```
+
+---
+
+## fileExt
+
+Extract the file extension from a string.
+
+```js
+ab.fileExt('.hello.json');
+// => json
+ab.fileExt('index.js');
+// => js
+```
+
+```ts
+/**
+ * Extract the file extension from a string.
+ * 
+ * @param fileName - The input string to extract the file extension.
+ * @returns The extracted file extension.
+ */
+export function fileExt(fileName: string): string;
+```
+
+---
+
+## flatten
+
+Unnest a nested array or object into a single-level structure.
+
+:::info
+Parameter `joiner` defaults to a dot (`.`).
+:::
+
+```js
+ab.flatten([1, [2, 3, 4], 5]);
+// => [1, 2, 3, 4, 5]
+ab.flatten({ a: 1, b: { c: 3, d: 4 } }, '-');
+// => { a: 1, 'b-c': 3, 'b-d': 4 }
+```
+
+```ts
+/**
+ * Unnest a nested object or an array into a single-level structure.
+ * 
+ * @param data - The input array or object to flatten.
+ * @param [joiner] - Joiner when joining two object names together.
+ */
+export function flatten<T>(data: T[], joiner?: string): T[];
+export function flatten<T>(data: Obj<T>, joiner?: string): Obj<T>;
+```
+
+---
+
+## intersection
+
+Find duplicated elements in a string, an array, or an object.
+
+```js
+ab.intersection('abc', 'bcd');
+// => ['b', 'c']
+ab.intersection([1, 2, 3], [2, 3, 4]);
+// => [2, 3]
+ab.intersection({ a: 1, b: 2, c: 3 }, { b: 2, c: 3, d: 4 });
+// => { b: 2, c: 3 }
+```
+
+```ts
+/**
+ * Find duplicated elements in a string, an array, or an object.
+ * 
+ * @param datas - The datas to compare.
+ * @returns An array or an object with the duplicate elements.
+ */
+export function intersection(...datas: string[]): string[];
+export function intersection<T>(...datas: T[]): T[];
+export function intersection<T>(...datas: Obj<T>[]): Obj<T>;
+```
+
+---
+
+## merge
+
+Deeply merge a string, an array or an object together.
+
+```js
+ab.merge('hello', 'hi');
+// => 'hellohi'
+ab.merge([1, 2, 3], [4, 5, 6]);
+// => [1, 2, 3, 4, 5, 6]
+ab.merge({ a: 1, b: 2 }, { c: 3, d: 4 });
+// => { a: 1, b: 2, c: 3, d: 4 }
+```
+
+```ts
+/**
+ * Deeply merge a string, an array or an object together.
+ * 
+ * @param target - A target to merge into.
+ * @param datas - The datas to merge.
+ * @returns The merged datas.
+ */
+export function merge(target: string, ...datas: string[]): string;
+export function merge<T>(target: T[], ...datas: T[]): T[];
+export function merge<T>(target: Obj<T>, ...datas: Obj<T>[]): Obj<T>;
+```
+
+---
+
+## reverse
+
+Reverse a string, an array, or an object.
+
+```js
+ab.reverse([1, 2, 3, 4]);
+// => [4, 3, 2, 1]
+ab.reverse({ a: 1, b: 2, c: 3 });
+// => { c: 3, b: 2, a: 1 }
+ab.reverse('Hello, World!');
+// => '!dlroW ,olleH'
+```
+
+```ts
+/**
+ * Reverse a string, an array, or an object.
+ * 
+ * @param data - A string, an array or a object to reverse.
+ * @returns The reversed data.
+ */
+export function reverse(data: string): string;
+export function reverse<T>(data: T[]): T[];
+export function reverse<T>(data: Obj<T>): Obj<T>;
+```
+
+---
+
+## shuffle
+
+Randomly shuffle an array, object or a string.
+
+```js
+ab.shuffle('ab')
+// => 'ab' or 'ba' etc.
+ab.shuffle([1, 2]);
+// => [1, 2] or [2, 1], etc.
+ab.shuffle({ a: 1, b: 2 });
+// => { a: 1, b: 2 } or { b: 2, a: 1 } etc.
+```
+
+```ts
+/**
+ * Randomly shuffle a string, an array, or an object.
+ * 
+ * @param data - A string, an array, or an object to shuffle.
+ * @returns The shuffled data.
+ */
+export function shuffle<T>(data: string): string;
+export function shuffle<T>(data: T[]): T[];
+export function shuffle<T>(data: Obj<T>): Obj<T>;
+```
+
+---
+
+## sort
+
+Sort a string, an array or an object alphabetically or ascendingly.
+
+```js
+ab.sort([2, 3, 1]);
+// => 1, 2, 3
+ab.sort({ b: 2, c: 3, a: 1 });
+// => { a: 1, b: 2, c: 3 }
+ab.sort('Aloha!');
+// => '!Aahlo'
+```
+
+```ts
+/**
+ * Sort a string, an array or an object alphabetically or ascendingly.
+ * 
+ * @param data - The input array or object to sort.
+ * @returns The sorted data.
+ */
+export function sort<T>(data: T[]): T[];
+export function sort<T>(data: Obj<T>): Obj<T>;
+```

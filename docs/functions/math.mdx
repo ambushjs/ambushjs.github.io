@@ -20,12 +20,14 @@ ab.factorial(10);
 ```
 
 ```ts
+/**
+ * Find the factorial of a number.
+ * 
+ * @param n - The number to caclulate the factorial.
+ * @returns The factorial of the given number.
+ */
 export function factorial(n: number): number;
 ```
-
-| Parameter | Type                | Description                                                |
-|-----------|---------------------|------------------------------------------------------------|
-| n         | `number`            | The number to caclulate the factorial.                     |
 
 ---
 
@@ -41,19 +43,21 @@ ab.fibonacci(2, true);
 ```
 
 ```ts
+/**
+ * Get the nth Fibonacci element or an array up to the nth element.
+ * 
+ * @param n - The nth of the fibonacci sequence.
+ * @param array - Determines wether to generate an array.
+ * @returns The nth Fibonacci element or an array up to the nth element.
+ */
 export function fibonacci(n: number, array: boolean): number | number[];
 ```
-
-| Parameter | Type                | Description                                                |
-|-----------|---------------------|------------------------------------------------------------|
-| n         | `number`            | The number to caclulate the factorial.                     |
-| array     | `boolean`           | Determines wether to generate an array.                    |
 
 ---
 
 ## isEven
 
-Check if a number is an even number.
+Check if a number is even.
 
 ```js
 ab.isEven(3);
@@ -63,12 +67,14 @@ ab.isEven(2);
 ```
 
 ```ts
+/**
+ * Check if a number is even.
+ * 
+ * @param n - The input number to check.
+ * @returns If a number is even.
+ */
 export function isEven(n: number): boolean;
 ```
-
-| Parameter | Type                | Description                                |
-|-----------|---------------------|--------------------------------------------|
-| n         | `number`            | The number to check if it is even.         |
 
 ---
 
@@ -84,12 +90,14 @@ ab.isPrime(10);
 ```
 
 ```ts
+/**
+ * Check if a number is a prime number.
+ * 
+ * @param n - The input number to check.
+ * @returns If a number is a prime number.
+ */
 export function isPrime(n: number): boolean;
 ```
-
-| Parameter | Type                | Description                                      |
-|-----------|---------------------|--------------------------------------------------|
-| n         | `number`            | The number to check if it is a prime number.     |
 
 ---
 
@@ -105,12 +113,14 @@ ab.mean([1, 23, 3]);
 ```
 
 ```ts
+/**
+ * Find the mean (average) in an array with numbers.
+ * 
+ * @param numbers - The input numbers to check.
+ * @returns The mean of the numbers.
+ */
 export function mean(numbers: number[]): number;
 ```
-
-| Parameter | Type                | Description                                      |
-|-----------|---------------------|--------------------------------------------------|
-| numbers   | `number[]`          | Array of numbers to calculate the mean.          |
 
 ---
 
@@ -126,12 +136,14 @@ ab.median([7, 3, 9]);
 ```
 
 ```ts
+/**
+ * Find the median (middle) in an array with numbers.
+ * 
+ * @param numbers - The input numbers to check.
+ * @returns The median of the numbers.
+ */
 export function median(numbers: number[]): number;
 ```
-
-| Parameter | Type                | Description                                      |
-|-----------|---------------------|--------------------------------------------------|
-| numbers   | `number[]`          | Array of numbers to calculate the median.        |
 
 ---
 
@@ -147,12 +159,14 @@ ab.mode([7, 3, 3, 9]);
 ```
 
 ```ts
-export function mode(numbers: number[]): number;
+/**
+ * Find the mode (common) in an array with numbers.
+ * 
+ * @param numbers - The input numbers to check.
+ * @returns The mode of the numbers.
+ */
+export function mode(numbers: number[]): number | number[];
 ```
-
-| Parameter | Type                | Description                                      |
-|-----------|---------------------|--------------------------------------------------|
-| numbers   | `number[]`          | Array of numbers to calculate the mode.          |
 
 ---
 
@@ -168,5 +182,11 @@ ab.pascal(1);
 ```
 
 ```ts
+/**
+ * Generate an array of the Pascal's triangle with the specified length.
+ * 
+ * @param n - The input number to determine the triangle size.
+ * @returns Pascal's triangle with the specified length.
+ */
 export function pascal(n: number): number[][];
 ```
