@@ -40,10 +40,10 @@ function Feature({ image, title, description }) {
     return (
         <div className={styles.card}>
             <div className={styles.center}>
-                <img className={styles.img} src={image}></img>
+                <img style={{ width: '180px' }} src={image}></img>
             </div>
-            <div className={`${styles.center} ${styles.padding}`}>
-                <h1 className={styles.title}>{title}</h1>
+            <div className={styles.center} style={{ padding: '0 16px' }}>
+                <h1 style={{ fontSize: '20px' }}>{title}</h1>
                 <p>{description}</p>
             </div>
         </div>

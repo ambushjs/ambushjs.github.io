@@ -1,23 +1,15 @@
 .features {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    gap: 20px;
     width: 100%;
-    padding: 32px 0;
-}
-
-.img {
-    width: 180px;
+    padding: 32px;
+    justify-content: center;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
+    min-height: 400px;
+    width: 325px;
     background-color: var(--feature-background);
-    width: 25em;
-    min-height: 23em;
-    margin: 1% 0.5%;
     border-radius: 30px;
     outline: 1px solid var(--docsearch-muted-color);
 }
@@ -30,20 +22,16 @@
     text-align: center;
 }
 
-.padding {
-    padding: 0 16px;
-}
-
-.title {
-    font-size: 20px;
-}
-
-@media screen and (max-width: 934px) {
+@media screen and (max-width: 741px) {
     .features {
         flex-direction: column;
+        align-items: center;
+        padding: 32px 0px;
     }
 
     .card {
         width: 80%;
+        max-height: 400px;
+        min-height: 0;
     }
 }
