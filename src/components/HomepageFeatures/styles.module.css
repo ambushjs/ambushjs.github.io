@@ -1,0 +1,49 @@
+.features {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 32px 0;
+}
+
+.img {
+    width: 180px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--feature-background);
+    width: 25em;
+    min-height: 23em;
+    margin: 1% 0.5%;
+    border-radius: 30px;
+    outline: 1px solid var(--docsearch-muted-color);
+}
+
+.card:hover {
+    outline-width: 2px;
+}
+
+.center {
+    text-align: center;
+}
+
+.padding {
+    padding: 0 16px;
+}
+
+.title {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 934px) {
+    .features {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 80%;
+    }
+}

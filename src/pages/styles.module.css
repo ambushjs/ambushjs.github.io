@@ -1,0 +1,5 @@
+.main {
+    background: linear-gradient(215deg, #2f1b6d6d, transparent 40%),
+        radial-gradient(#2f1b6d6d, transparent 40%) no-repeat -60vw -40vh / 105vw 200vh,
+        radial-gradient(#2f1b6d6d, transparent 65%) no-repeat 50% calc(100% + 20rem) / 60rem 30rem;
+}
