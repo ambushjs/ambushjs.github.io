@@ -8,4 +8,84 @@ description: Explore available transcoding utilities.
 
 Explore available transcoding utilities.
 
+## base64Decode
 
+Decode from a base64 string.
+
+```js
+ab.base64Decode('SGVsbG8sIFdvcmxkIQ==');
+// => 'Hello, World!'
+```
+
+```ts
+/**
+ * Decode from a base64 string.
+ * 
+ * @param data - The input string to decode.
+ * @returns The decoded string.
+ */
+export function base64Decode(data: string): string;
+```
+
+---
+
+## base64Encode
+
+Encode from a base64 string.
+
+```js
+ab.base64Encode('Hello, World!');
+// => 'SGVsbG8sIFdvcmxkIQ=='
+```
+
+```ts
+/**
+ * Encode from a base64 string.
+ * 
+ * @param data - The input string to encode.
+ * @returns The encoded string.
+ */
+export function base64Encode(data: string): string;
+```
+
+---
+
+## urlDecode
+
+Decode from a URL-encoded format.
+
+```js
+ab.urlDecode('https%3A%2F%2Fexample.com');
+// => 'https://example.com'
+```
+
+```ts
+/**
+ * Decode from a URL-encoded format.
+ * 
+ * @param encoded - The input string to decode.
+ * @returns The decoded string.
+ */
+export function urlDecode(encoded: string): string;
+```
+
+---
+
+## urlEncode
+
+Encode to a URL-encoded format.
+
+```js
+ab.urlEncode('https://example.com');
+// => 'https%3A%2F%2Fexample.com'
+```
+
+```ts
+/**
+ * Encode to a URL-encoded format.
+ * 
+ * @param url - The input string to encode.
+ * @returns The encoded string.
+ */
+export function urlEncode(url: string): string;
+```

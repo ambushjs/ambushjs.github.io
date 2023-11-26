@@ -27,3 +27,26 @@ console.log(`${ab.colors.red}Hello!${ab.colors.reset}`);
  */
 export const colors: Colors;
 ```
+
+---
+
+## objectSize
+
+Get the size from an object.
+
+```js
+ab.objectSize({ a: 1, b: 2, c: 3 });
+// => 3
+ab.objectSize({});
+// => 0
+```
+
+```ts
+/**
+ * Get the size from an object.
+ * 
+ * @param data - The input object to check.
+ * @returns The object size.
+ */
+export function objectSize<T>(data: Obj<T>): number;
+```

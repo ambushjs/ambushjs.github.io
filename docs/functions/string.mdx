@@ -165,6 +165,16 @@ ab.escapeHtml('<div>Hello, World!</div>');
 // => '&lt;div&gt;Hello, World!&lt;/div&gt;'
 ```
 
+```ts
+/**
+ * Escape special HTML characters in a string.
+ * 
+ * @param input - The input string to escape.
+ * @returns The escaped string.
+ */
+export function escapeHtml(input: string): string;
+```
+
 ---
 
 ## unescapeHtml
@@ -175,6 +185,41 @@ Unescape escaped HTML characters in a string.
 ab.unescapeHtml('&lt;div&gt;Hello, World!&lt;/div&gt;');
 // => '<div>Hello, World!</div>'
 ```
+
+```ts
+/**
+ * Unescape escaped HTML characters in a string.
+ * 
+ * @param input - The input string to unescape.
+ * @returns The unescaped string.
+ */
+export function unescapeHtml(input: string): string;
+```
+
+---
+
+## countWords
+
+Count the words in a sentence.
+
+```js
+ab.countWords('Hello, World!');
+// => 2
+ab.countWords('One, two, three, four, and five.');
+// => 6
+```
+
+```ts
+/**
+ * Count the words in a sentence.
+ * 
+ * @param input - The input to count.
+ * @returns The amount of the words in the sentence.
+ */
+export function countWords(input: string): number;
+```
+
+---
 
 ## occurences
 

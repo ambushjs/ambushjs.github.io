@@ -40,6 +40,26 @@ export function chunk<T>(data: Obj<T>, size: number): Obj<T>[];
 
 ---
 
+## currentIP
+
+Get the current IP address on the current local machine.
+
+```js
+console.log(ab.currentIP());
+// Try it out your self!
+```
+
+```ts
+/**
+ * Get the current IP address on the current local machine.
+ * 
+ * @returns The current IP address.
+ */
+export function currentIP(): string;
+```
+
+---
+
 ## deduplicate
 
 Remove duplicated elements in an array or an object.
@@ -94,6 +114,36 @@ ab.difference('abc', 'bcd');
 export function difference(a: string, b: string): string[];
 export function difference<T>(a: T[], b: T[]): T[];
 export function difference<T>(a: Obj<T>, b: Obj<T>): Obj<T>[];
+```
+
+---
+
+## empty
+
+Check if a string, an array, a symbol, or an object is empty.
+
+```js
+ab.empty('');
+// => true
+ab.empty([1, 3]);
+// => false
+ab.empty(Symbol());
+// => true
+ab.empty({ a: 1 });
+// => false
+```
+
+```ts
+/**
+ * Check if a string, an array, a symbol, or an object is empty.
+ * 
+ * @param value - The data to check if empty.
+ * @returns Wether the input value is empty or not.
+ */
+export function empty(value: string): boolean;
+export function empty<T>(value?: T[]): boolean;
+export function empty(value: symbol): boolean;
+export function empty<T>(value: Obj<T>): boolean;
 ```
 
 ---
